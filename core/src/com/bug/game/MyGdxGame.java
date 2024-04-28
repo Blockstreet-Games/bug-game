@@ -39,10 +39,10 @@ public class MyGdxGame extends ApplicationAdapter {
 
 		// Init objects
 		player = new Rectangle();
-		player.x = 400 - 256/2;
+		player.x = 400 - 64/2;
 		player.y = 50;
-		player.width = 256;
-		player.height = 256;
+		player.width = 64;
+		player.height = 64;
 	}
 
 	@Override
@@ -56,9 +56,13 @@ public class MyGdxGame extends ApplicationAdapter {
 		batch.draw(flyImage, player.x, player.y);
 		batch.end();
 
-		if(Gdx.input.isKeyPressed(Input.Keys.LEFT)) player.x -= 200 * Gdx.graphics.getDeltaTime();
-		if(Gdx.input.isKeyPressed(Input.Keys.RIGHT)) player.x += 200 * Gdx.graphics.getDeltaTime();
+		if(Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
+		player.x -= 200 * Gdx.graphics.getDeltaTime();
+		}
 
+		if(Gdx.input.isKeyPressed(Input.Keys.RIGHT)) {
+		player.x += 200 * Gdx.graphics.getDeltaTime();
+		}
 	}
 	
 	@Override
